@@ -53,3 +53,10 @@
 height: 266px;
 
 }
+
+.onbording small{
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
+}

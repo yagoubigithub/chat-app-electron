@@ -14,7 +14,8 @@ const Login = () => {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
-        phone: ""
+        phone: "",
+        code : ""
     })
 
 
