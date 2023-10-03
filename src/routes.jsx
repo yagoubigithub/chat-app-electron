@@ -1,6 +1,6 @@
 import { Router, Route } from 'electron-router-dom'
 
-import { Login } from './screens'
+import { Login , Home } from './screens'
 
 export function AppRoutes() {
   return (
@@ -8,6 +8,7 @@ export function AppRoutes() {
       main={
         <>
           <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
         
         </>
       }

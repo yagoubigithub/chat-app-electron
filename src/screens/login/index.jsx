@@ -1,4 +1,6 @@
 import React from 'react'
+import { Navigate } from "react-router-dom";
+
 import { useState } from 'react';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
@@ -69,10 +71,7 @@ const Login = () => {
             break;
 
         default:
-            return (
-                <div  id='login'>
-                </div>
-              )
+            return <Navigate to="/home" />;
             break;
     }
 
