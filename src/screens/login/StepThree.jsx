@@ -17,6 +17,8 @@ const StepThree = ({ nextStep, handleFormData, values }) => {
     ) {
       setError("name and lastname  are required");
     } else {
+
+      localStorage.setItem("profile" , JSON.stringify(values))
       nextStep();
     }
   };

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Navigate } from "react-router-dom";
+import React, { useEffect } from 'react'
+import {Navigate ,   useNavigate } from "react-router-dom";
 
 import { useState } from 'react';
 import StepOne from './StepOne';
@@ -10,6 +10,13 @@ import "./login.css"
 
 const Login = () => {
 
+    const navigate = useNavigate()
+    useEffect(()=>{
+        if(localStorage.getItem("profile")){
+            navigate('/home')
+        }
+
+    } , [])
     const [step, setstep] = useState(1);
 
     //state for form data
