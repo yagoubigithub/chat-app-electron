@@ -4,6 +4,8 @@ import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 
+import "./login.css"
+
 const Login = () => {
 
     const [step, setstep] = useState(1);

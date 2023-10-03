@@ -1,0 +1,55 @@
+.form-group-phone {
+  display: flex;
+  width: 300px;
+  height: 44px;
+  padding: 16px, 4px, 16px, 4px;
+  border-radius: 10px;
+  border: 0.5px;
+  margin-bottom: 12px;
+  border: 0.5px solid rgba(229, 229, 234, 1);
+}
+.form-group-phone button {
+  height: 44px;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 4px;
+  border: 0;
+  outline: 0;
+}
+
+.form-group-phone input {
+  border: none;
+  outline: none;
+}
+
+.login-next {
+  width: 300px;
+  height: 48px;
+
+  padding: 8px, 24px, 8px, 24px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.login-next-black {
+  background: rgba(28, 28, 30, 1);
+  color: white;
+}
+.login-title {
+  font-size: 18px;
+  font-weight: 590;
+  line-height: 21px;
+  letter-spacing: -0.0045em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.onbording {
+  width: 300px;
+  height: 427px;
+}
+.login-logo {
+    width: 266px;
+height: 266px;
+
+}
