@@ -1,8 +1,13 @@
 
 const path = require("path");
 
-const { BrowserWindow, app } = require("electron");
+const  {
+  app,
+  BrowserWindow,
+  BrowserWindowConstructorOptions : WindowOptions,
+}= require('electron')
 
+const { createFileRoute, createURLRoute } = require('electron-router-dom')
 //our window you can chanege the size  and other
 
 let mainWindow = new BrowserWindow({
@@ -18,36 +23,29 @@ let mainWindow = new BrowserWindow({
 });
 
 
+ // Don't forget to check if the port is the same as your dev server
+ const devServerURL = createURLRoute('http://localhost:3000', 'main')
+
+ const fileRoute = createFileRoute(
+   path.join(__dirname, '../renderer/index.html'),
+   'main'
+ )
+
 if (app.isPackaged) {
-
-
-  if (process.platform === "linux") {
-
-
-    mainWindow.loadFile(`${__dirname}/../index.html`);
-
-
-  } else {
-    mainWindow.loadFile(path.join(__dirname, "../", "index.html"));
-    // mainWindow.setMenu(null);
-  }
-
+ //production
+ mainWindow.loadFile(...fileRoute)
 } else {
-  mainWindow.loadURL("http://localhost:3000");
+  //devlopment 
+  mainWindow.loadURL(devServerURL)
+  // Automatically open Chrome's DevTools in development mode.
+  mainWindow.webContents.openDevTools();
 }
 
-// Automatically open Chrome's DevTools in development mode.
-if (!app.isPackaged) {
-  //  mainWindow.webContents.openDevTools();
-}
 
-//mainWindow.webContents.openDevTools();
 
-// //if the user click the cllose btn we close all app
-// mainWindow.on("close", (e) => {
 
-//     if (process.platform !== 'darwin') app.quit()
-// });
+
+
 
 
 module.exports = mainWindow;
