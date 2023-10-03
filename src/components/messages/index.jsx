@@ -7,6 +7,7 @@ const Messages = () => {
 
 
     const [text, setText] = useState("");
+    const [wait , setWait] = useState(false)
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
@@ -27,13 +28,14 @@ const Messages = () => {
         _messages.push(message)
         setMessages(_messages)
 
+        setWait(true)
         localStorage.setItem("messages", JSON.stringify(_messages))
         setTimeout(() => {
-
-            setMessages(_messages => [..._messages, replay])
+            setWait(false)
+            setMessages(_messages => [...JSON.parse(localStorage.getItem("messages")), replay])
             localStorage.setItem("messages", JSON.stringify(_messages))
 
-        }, 2000)
+        }, 1000)
 
         setText("")
     }
@@ -49,13 +51,31 @@ const Messages = () => {
 
 
                 <div className="inner">
-                    {messages.map((message, index) => {
+                   <>
+                   
+                   
+                   {messages.map((message, index) => {
                         return (<p key={index} className={`message__content ${message.type}`}>{message.text} 
                         
-                        <p cassName={`date ${message.type === 'message' ? 'text-white' : ''}`}>{moment(message.date).fromNow()}</p>
+                        <p className={`date ${message.type === 'message' ? 'text-white' : ''}`}>{moment(message.date).fromNow()}</p>
                         </p>)
                     })}
+                    
+                   {wait &&  <p className={`message__content wait `}>
+
+
+                   <div class="is-typing">
+      <div class="jump1"></div>
+      <div class="jump2"></div>
+      <div class="jump3"></div>
+      <div class="jump4"></div>
+      <div class="jump5"></div>
+   </div>
+                    </p>}
+                    </>
+
                 </div>
+                
             </div>
             <div id='message-input-container'>
                 <textarea onChange={(e) => setText(e.target.value)}

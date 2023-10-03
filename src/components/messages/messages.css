@@ -121,6 +121,48 @@ max-height: calc(100vh - 64px - 50px - 30px);
   color: white !important;
 }
 
+.is-typing {
+ 
+  width: 85px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.jump1,
+      .jump2,
+      .jump3,
+      .jump4,
+      .jump5 {
+         width: 10px;
+         height: 10px;
+         border-radius: 100%;
+         background-color: gray;
+      }
+
+      .jump1 {
+         animation: typing 1.5s linear infinite;
+         animation-delay: 0.1s;
+      }
+
+      .jump2 {
+         animation: typing 1.5s linear infinite;
+         animation-delay: 0.2s;
+      }
+
+      .jump3 {
+         animation: typing 1.5s linear infinite;
+         animation-delay: 0.3s;
+      }
+
+      .jump4 {
+         animation: typing 1.5s linear infinite;
+         animation-delay: 0.4s;
+      }
+
+      .jump5 {
+         animation: typing 1.5s linear infinite;
+         animation-delay: 0.5s;
+      }
 @keyframes message {
   0% { 
      max-height: 100vmax; 
@@ -133,5 +175,39 @@ max-height: calc(100vh - 64px - 50px - 30px);
      max-height: 100vmax; 
      overflow: visible; 
      padding-top: 1rem;
+  }
+}
+
+
+
+
+@keyframes typing {
+  0% {
+     transform: translateY(0px);
+  }
+
+  25% {
+     transform: translateY(0px);
+  }
+
+  35% {
+     transform: translateY(15px);
+  }
+
+  45% {
+     transform: translateY(0px);
+  }
+
+  60% {
+     transform: translateY(-15px);
+  }
+
+  75% {
+       background-color: white;
+     transform: translateY(0px);
+  }
+
+  100% {
+     transform: translateY(0px);
   }
 }
