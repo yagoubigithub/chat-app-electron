@@ -52,7 +52,7 @@ const StepTwo = ({ nextStep, handleFormData, values }) => {
 
 
       </div>
-      <button className='login-next login-next-black'>Next</button>
+      <button className={` login-next ${values.code ? 'login-next-black' : 'login-next-gray'}`} >Next</button>
 
 
 

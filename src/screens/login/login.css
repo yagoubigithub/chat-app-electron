@@ -28,11 +28,17 @@
 
   padding: 8px, 24px, 8px, 24px;
   border-radius: 10px;
-  gap: 4px;
+  border: none;
 }
 
 .login-next-black {
   background: rgba(28, 28, 30, 1);
+  color: white;
+}
+
+.login-next-gray {
+  background: rgb(141,141,143);
+
   color: white;
 }
 .login-title {
