@@ -12,7 +12,7 @@ const Login = () => {
 
     //state for form data
     const [formData, setFormData] = useState({
-        firstName: "",
+        firstname: "",
         lastName: "",
         phone: "",
         code : ""
@@ -63,7 +63,7 @@ const Login = () => {
         case 3:
             return (<>
 
-<StepThree values={formData}  />
+<StepThree nextStep={nextStep} prevStep={prevStep} handleFormData={handleInputData} values={formData}/>
             </>)
 
             break;

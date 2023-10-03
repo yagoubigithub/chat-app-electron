@@ -44,7 +44,7 @@ const StepTwo = ({ nextStep, handleFormData, values }) => {
 
 
         <input type="text" name="code"
-          defaultValue={values.firstName}
+          defaultValue={values.code}
 
 
           onChange={handleFormData("code")}
