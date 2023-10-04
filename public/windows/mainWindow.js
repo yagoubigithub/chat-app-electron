@@ -27,7 +27,7 @@ let mainWindow = new BrowserWindow({
  const devServerURL = createURLRoute('http://localhost:3000', 'main')
 
  const fileRoute = createFileRoute(
-   path.join(__dirname, '../renderer/index.html'),
+   path.join(__dirname, '../index.html'),
    'main'
  )
 

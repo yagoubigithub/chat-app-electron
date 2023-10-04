@@ -4,7 +4,9 @@ import { Login , Home } from './screens'
 
 export function AppRoutes() {
   return (
-    <Router
+    <div id='app'>
+
+<Router
       main={
         <>
           <Route path="/" element={<Login />} />
@@ -14,5 +16,6 @@ export function AppRoutes() {
       }
       
     />
+    </div>
   )
 }

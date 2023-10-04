@@ -8,7 +8,7 @@ const Sidebar = () => {
   const  [messages  ,  setMessages] = useState(JSON.parse(localStorage.getItem("messages")))
   useEffect(()=>{
     setInterval(()=>{
-      setMessages(JSON.parse(localStorage.getItem("messages")))
+      setMessages(me=>JSON.parse(localStorage.getItem("messages")))
     } , 2000)
   })
   return (
@@ -26,7 +26,7 @@ const Sidebar = () => {
         <p>{profile.firstname}</p>
           <p>6:10 AM</p>
         </div>
-         <p> {messages.length > 2 && <small>{messages[messages.length -1].text}</small>}</p>
+         <p> {messages.length >= 1 && <small>{messages[messages.length -1].text}</small>}</p>
          </div>
 
         </li>
