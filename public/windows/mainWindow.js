@@ -18,7 +18,7 @@ let mainWindow = new BrowserWindow({
   // frame : false,
   webPreferences: {
     preload: path.join(__dirname, "./preload.js"),
-    nodeIntegration: true
+    nodeIntegration: true // we can use electron inside React.js
   },
 });
 
@@ -26,6 +26,8 @@ let mainWindow = new BrowserWindow({
  // Don't forget to check if the port is the same as your dev server
  const devServerURL = createURLRoute('http://localhost:3000', 'main')
 
+
+ //for production
  const fileRoute = createFileRoute(
    path.join(__dirname, '../index.html'),
    'main'
