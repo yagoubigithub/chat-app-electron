@@ -51,7 +51,7 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
 
 
             </div>
-            <button className={` login-next ${values.phone ? 'login-next-black' : 'login-next-gray'}`}>Next</button>
+            <button className={` login-next login-next-black `}>Next</button>
 
 
 

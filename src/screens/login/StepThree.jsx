@@ -10,6 +10,7 @@ const StepThree = ({ nextStep, handleFormData, values }) => {
   const submitFormData = (e) => {
     e.preventDefault();
 
+    console.log(values)
     // checking if value of first name and last name is empty show error else take to step 2
     if (
       validator.isEmpty(values.firstname) || validator.isEmpty(values.lastname)
@@ -66,7 +67,7 @@ const StepThree = ({ nextStep, handleFormData, values }) => {
 
 
       </div>
-      <button className={` login-next ${values.firstname && values.lastname ? 'login-next-black' : 'login-next-gray'}`}>Next</button>
+      <button className={` login-next login-next-black `}>Next</button>
 
 
 

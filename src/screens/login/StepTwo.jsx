@@ -34,7 +34,7 @@ const StepTwo = ({ nextStep, handleFormData, values }) => {
 
       <h3 className='login-title'>+1 {values.phone}</h3>
 
-      <small className="text-muted align-center">
+      <small className="text-muted align-center sms-code-title">
         We have sent you an SMS with the code
       </small>
       <div
@@ -52,7 +52,7 @@ const StepTwo = ({ nextStep, handleFormData, values }) => {
 
 
       </div>
-      <button className={` login-next ${values.code ? 'login-next-black' : 'login-next-gray'}`} >Next</button>
+      <button className={` login-next login-next-black `} >Next</button>
 
 
 
