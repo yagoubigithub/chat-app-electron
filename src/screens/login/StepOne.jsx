@@ -41,7 +41,7 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
                 className='form-group-phone'
             >
 
-                <button>+213 </button>
+                <button>+1</button>
                 <input type="text" name="phone"
                     defaultValue={values.phone}
 
