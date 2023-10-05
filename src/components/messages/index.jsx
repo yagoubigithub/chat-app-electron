@@ -78,8 +78,8 @@ const Messages = () => {
                 
             </div>
             <div id='message-input-container'>
-                <textarea onChange={(e) => setText(e.target.value)}
-                    value={text} name="message" id="message-input" placeholder='Message' ></textarea>
+                <input type='text' onChange={(e) => setText(e.target.value)}
+                    value={text} name="message" id="message-input" placeholder='Message' />
 
 
                 <button id='send-btn'><img src="./img/arrow-top.png" alt="" onClick={send} /></button>

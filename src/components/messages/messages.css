@@ -8,6 +8,7 @@
   justify-content: center;
   padding: 15px;
   align-items: center;
+  height: 72px;
 }
 #messages-container #message-input-container #message-input {
   width: 100%;
@@ -15,10 +16,9 @@
   outline: none;
   border: none;
   height: 40px;
-  border-radius: 20px;
+  border-radius: 100px;
   margin-right: 10px;
-  padding-left: 15px;
-  padding-top: 5px;
+  padding: 8px 16px 8px 16px;
 
   font-size: 14px;
   font-weight: 400;
@@ -69,7 +69,7 @@
   display: flex;
   flex-direction: column-reverse;
 
-max-height: calc(100vh - 64px - 50px - 30px);
+  max-height: calc(100vh - 64px - 50px - 30px);
   overflow: auto;
 }
 
@@ -79,13 +79,12 @@ max-height: calc(100vh - 64px - 50px - 30px);
 }
 
 #messages-container #messages-list .inner .message__content {
-  
- 
-  animation: message .15s ease-out 0s forwards;
+  animation: message 0.15s ease-out 0s forwards;
   max-width: 60%;
-  padding: 6px;
+
+padding: 8px 16px 8px 16px;
+
   font-size: 14px;
-  
 }
 
 #messages-container #messages-list .inner .message {
@@ -93,121 +92,114 @@ max-height: calc(100vh - 64px - 50px - 30px);
   flex-direction: row-reverse;
   text-align: right;
   align-self: flex-end;
-  
+
   color: white !important;
   border-radius: 12px 12px 0 12px;
 }
 
-
 #messages-container #messages-list .inner .replay {
   background: rgba(229, 229, 234, 1);
-  border-radius: 12px 12px 12px  0;
+  border-radius: 12px 12px 12px 0;
   text-align: left;
   align-self: flex-start;
   transform-origin: 100% 100%;
 }
 
 #messages-container #messages-list .inner .message__content p {
-
   font-size: 10px;
   padding: 0;
   margin: 0;
-  
+
   text-align: right;
 }
 
 #messages-container #messages-list .inner .message__content p.text-white {
-
   color: white !important;
 }
 
 .is-typing {
- 
   width: 85px;
   justify-content: space-around;
   display: flex;
 }
 
 .jump1,
-      .jump2,
-      .jump3,
-      .jump4,
-      .jump5 {
-         width: 10px;
-         height: 10px;
-         border-radius: 100%;
-         background-color: gray;
-      }
+.jump2,
+.jump3,
+.jump4,
+.jump5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: gray;
+}
 
-      .jump1 {
-         animation: typing 1.5s linear infinite;
-         animation-delay: 0.1s;
-      }
+.jump1 {
+  animation: typing 1.5s linear infinite;
+  animation-delay: 0.1s;
+}
 
-      .jump2 {
-         animation: typing 1.5s linear infinite;
-         animation-delay: 0.2s;
-      }
+.jump2 {
+  animation: typing 1.5s linear infinite;
+  animation-delay: 0.2s;
+}
 
-      .jump3 {
-         animation: typing 1.5s linear infinite;
-         animation-delay: 0.3s;
-      }
+.jump3 {
+  animation: typing 1.5s linear infinite;
+  animation-delay: 0.3s;
+}
 
-      .jump4 {
-         animation: typing 1.5s linear infinite;
-         animation-delay: 0.4s;
-      }
+.jump4 {
+  animation: typing 1.5s linear infinite;
+  animation-delay: 0.4s;
+}
 
-      .jump5 {
-         animation: typing 1.5s linear infinite;
-         animation-delay: 0.5s;
-      }
+.jump5 {
+  animation: typing 1.5s linear infinite;
+  animation-delay: 0.5s;
+}
 @keyframes message {
-  0% { 
-     max-height: 100vmax; 
+  0% {
+    max-height: 100vmax;
   }
-  80% { 
-     transform: scale(1.1); 
+  80% {
+    transform: scale(1.1);
   }
-  100% { 
-     transform: scale(1); 
-     max-height: 100vmax; 
-     overflow: visible; 
-     padding-top: 1rem;
+  100% {
+    transform: scale(1);
+    max-height: 100vmax;
+    overflow: visible;
+    
   }
 }
 
-
-
-
 @keyframes typing {
   0% {
-     transform: translateY(0px);
+    transform: translateY(0px);
   }
 
   25% {
-     transform: translateY(0px);
+    transform: translateY(0px);
   }
 
   35% {
-     transform: translateY(15px);
+    transform: translateY(15px);
   }
 
   45% {
-     transform: translateY(0px);
+    transform: translateY(0px);
   }
 
   60% {
-     transform: translateY(-15px);
+    transform: translateY(-15px);
   }
 
   75% {
-       background-color: white;
-     transform: translateY(0px);
+    background-color: white;
+    transform: translateY(0px);
   }
 
   100% {
-     transform: translateY(0px);
+    transform: translateY(0px);
   }
 }
