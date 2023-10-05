@@ -32,7 +32,7 @@ const StepTwo = ({ nextStep, handleFormData, values }) => {
       </Alert> : ""}
 
 
-      <h3 className='login-title'>+1 234 543 5664 33</h3>
+      <h3 className='login-title'>+213 {values.phone}</h3>
 
       <small className="text-muted align-center">
         We have sent you an SMS with the code

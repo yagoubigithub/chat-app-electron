@@ -12,7 +12,7 @@
   height: 44px;
   padding: 10px;
   border-radius: 10px;
-  gap: 4px;
+  margin: 4px;
   border: 0;
   outline: 0;
 }
@@ -53,6 +53,7 @@
 .onbording {
   width: 300px;
   height: 427px;
+  text-align: center;
 }
 .login-logo {
     width: 266px;
