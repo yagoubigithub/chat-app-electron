@@ -114,8 +114,17 @@ padding: 8px 16px 8px 16px;
   text-align: right;
 }
 
-#messages-container #messages-list .inner .message__content p.text-white {
+#messages-container #messages-list .inner .message__content .text-white {
   color: white !important;
+}
+.date {
+
+font-size: 10px;
+font-weight: 400;
+line-height: 13px;
+letter-spacing: 0.0006em;
+text-align: right;
+
 }
 
 .is-typing {

@@ -57,11 +57,11 @@ const Messages = () => {
                         {messages.map((message, index) => {
                             return (<div key={index} className={`message__content ${message.type}`}>{message.text}
 
-                                <p className={`date ${message.type === 'message' ? 'text-white' : ''}`}>{moment(message.date).fromNow()}</p>
+                                <div className={`date ${message.type === 'message' ? 'text-white' : ''}`}>{moment(message.date).fromNow()}</div>
                             </div>)
                         })}
 
-                        {wait && <p className={`message__content wait `}>
+                        {wait && <div className={`message__content wait `}>
 
 
                             <div className="is-typing">
@@ -71,7 +71,7 @@ const Messages = () => {
                                 <div className="jump4"></div>
                                 <div className="jump5"></div>
                             </div>
-                        </p>}
+                        </div>}
                     </>
 
                 </div>
@@ -79,7 +79,13 @@ const Messages = () => {
             </div>
             <div id='message-input-container'>
                 <input type='text' onChange={(e) => setText(e.target.value)}
-                    value={text} name="message" id="message-input" placeholder='Message' />
+                    value={text} name="message" id="message-input" placeholder='Message' onKeyDown={(e)=>{
+
+                        if (e.key === 'Enter') 
+                        {
+                           send()
+                        }
+                    }} />
 
 
                 <button id='send-btn'><img src="./img/arrow-top.png" alt="" onClick={send} /></button>
