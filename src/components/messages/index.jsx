@@ -5,9 +5,9 @@ import { useEffect } from 'react';
 import moment from 'moment/moment';
 const Messages = () => {
 
-
+    const profile = JSON.parse(localStorage.getItem("profile"))
     const [text, setText] = useState("");
-    const [wait , setWait] = useState(false)
+    const [wait, setWait] = useState(false)
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
@@ -44,38 +44,38 @@ const Messages = () => {
 
             <div className="messages-header">
                 <img src="./img/profile.jfif" alt="" />
-                <h3>Darry</h3>
+                <h3>{profile.firstname}</h3>
             </div>
 
             <div id="messages-list">
 
 
                 <div className="inner">
-                   <>
-                   
-                   
-                   {messages.map((message, index) => {
-                        return (<div key={index} className={`message__content ${message.type}`}>{message.text} 
-                        
-                        <p className={`date ${message.type === 'message' ? 'text-white' : ''}`}>{moment(message.date).fromNow()}</p>
-                        </div>)
-                    })}
-                    
-                   {wait &&  <p className={`message__content wait `}>
+                    <>
 
 
-                   <div className="is-typing">
-      <div className="jump1"></div>
-      <div className="jump2"></div>
-      <div className="jump3"></div>
-      <div className="jump4"></div>
-      <div className="jump5"></div>
-   </div>
-                    </p>}
+                        {messages.map((message, index) => {
+                            return (<div key={index} className={`message__content ${message.type}`}>{message.text}
+
+                                <p className={`date ${message.type === 'message' ? 'text-white' : ''}`}>{moment(message.date).fromNow()}</p>
+                            </div>)
+                        })}
+
+                        {wait && <p className={`message__content wait `}>
+
+
+                            <div className="is-typing">
+                                <div className="jump1"></div>
+                                <div className="jump2"></div>
+                                <div className="jump3"></div>
+                                <div className="jump4"></div>
+                                <div className="jump5"></div>
+                            </div>
+                        </p>}
                     </>
 
                 </div>
-                
+
             </div>
             <div id='message-input-container'>
                 <input type='text' onChange={(e) => setText(e.target.value)}

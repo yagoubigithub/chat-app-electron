@@ -1,6 +1,7 @@
 #sidebar {
   background: #f2f2f7;
 
+  position: relative;
   width: 360px;
   height: 100vh;
 }
@@ -15,7 +16,7 @@
   height: 64px;
   display: flex;
   align-items: center;
-  
+
   padding-left: calc((100% - 312px) / 2);
   padding-right: calc((100% - 312px) / 2);
 }
@@ -33,7 +34,6 @@
   flex: 1;
   margin-left: 16px;
   max-height: 100%;
-
 }
 
 #sidebar ul.chat-list li.chat-item .chat-item-content-text .chat-item-top {
@@ -41,26 +41,41 @@
   justify-content: space-between;
   align-items: center;
 }
-#sidebar ul.chat-list li.chat-item .chat-item-content-text .chat-item-top :first-child {
-  
-    font-size: 16px;
-    font-weight: 590;
-    line-height: 22px;
-    letter-spacing: -0.0043em;
-    text-align: left;
-    
+#sidebar
+  ul.chat-list
+  li.chat-item
+  .chat-item-content-text
+  .chat-item-top
+  :first-child {
+  font-size: 16px;
+  font-weight: 590;
+  line-height: 22px;
+  letter-spacing: -0.0043em;
+  text-align: left;
 }
 
-
 #sidebar ul.chat-list li.chat-item .chat-item-content-text .chat-item-top p {
+  margin: 0 !important;
+  padding: 0% !important;
 
-    margin: 0 !important;
-    padding: 0% !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.0031em;
+  text-align: left;
+}
 
-font-size: 14px;
-font-weight: 400;
-line-height: 18px;
-letter-spacing: -0.0031em;
-text-align: left;
+.float-btn {
+  position: absolute;
 
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 113, 238, 1);
+  box-shadow: 0px 3.2941179275512695px 15.647059440612793px 0px
+    rgba(0, 113, 238, 0.16);
+  border: 0;
+  outline: 0;
+  border-radius: 100%;
+  right: 20px;
+  bottom: 20px;
 }

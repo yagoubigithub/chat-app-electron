@@ -4,12 +4,12 @@ import './sidebar.css'
 const Sidebar = () => {
 
   const profile = JSON.parse(localStorage.getItem("profile"))
-  
-  const  [messages  ,  setMessages] = useState(JSON.parse(localStorage.getItem("messages")))
-  useEffect(()=>{
-    setInterval(()=>{
-      setMessages(me=>JSON.parse(localStorage.getItem("messages")))
-    } , 2000)
+
+  const [messages, setMessages] = useState(JSON.parse(localStorage.getItem("messages")))
+  useEffect(() => {
+    setInterval(() => {
+      setMessages(me => JSON.parse(localStorage.getItem("messages")))
+    }, 2000)
   })
   return (
     <div id='sidebar'>
@@ -18,23 +18,27 @@ const Sidebar = () => {
 
         <li className="chat-item">
 
-          <img src="./img/profile.jfif" alt=""  />
-         
-         <div className='chat-item-content-text'>
-        
-        <div className='chat-item-top'>
-        <p>{profile.firstname}</p>
-          <p>6:10 AM</p>
-        </div>
+          <img src="./img/profile.jfif" alt="" />
 
-        {}
-         <p> {messages.length >= 1 && <small>{messages[messages.length -1].text.length > 20 ? messages[messages.length -1].text.substr(0 , 20) 
-                        + "...." : messages[messages.length -1].text}</small>}</p>
-         </div>
+          <div className='chat-item-content-text'>
+
+            <div className='chat-item-top'>
+              <p>{profile.firstname}</p>
+              <p>6:10 AM</p>
+            </div>
+
+            { }
+            <p> {messages.length >= 1 && <small>{messages[messages.length - 1].text.length > 32 ? messages[messages.length - 1].text.substr(0, 32)
+              + "...." : messages[messages.length - 1].text}</small>}</p>
+          </div>
 
         </li>
 
       </ul>
+
+      <button className='float-btn'>
+        <img src="./img/NewMessage.png" alt="" />
+      </button>
     </div>
   )
 }

@@ -65,7 +65,7 @@
 
 #messages-container #messages-list {
   flex: 1;
-  padding: 15px;
+  padding: 8px;
   display: flex;
   flex-direction: column-reverse;
 
@@ -85,6 +85,7 @@
 padding: 8px 16px 8px 16px;
 
   font-size: 14px;
+  margin: 8px;
 }
 
 #messages-container #messages-list .inner .message {
