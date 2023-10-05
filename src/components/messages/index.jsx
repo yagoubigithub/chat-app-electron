@@ -14,28 +14,19 @@ const Messages = () => {
         setMessages(JSON.parse(localStorage.getItem("messages")))
     }, [])
     const send = () => {
-        const message = { text, date: new Date(), type: 'message' };
+        const message = { text, date: new Date(), type: messages.length % 2 !== 0 ? "replay"  : "message"};
 
 
 
-        const replay = {
-            text: "this a automativaly replay we can change this later 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'",
-            date: new Date(),
-            type: "replay"
-        }
+     
 
         const _messages = [...messages]
         _messages.push(message)
         setMessages(_messages)
 
-        setWait(true)
+        setWait(false)
         localStorage.setItem("messages", JSON.stringify(_messages))
-        setTimeout(() => {
-            setWait(false)
-            setMessages(_messages => [...JSON.parse(localStorage.getItem("messages")), replay])
-            localStorage.setItem("messages", JSON.stringify(_messages))
-
-        }, 1000)
+       
 
         setText("")
     }
@@ -81,6 +72,7 @@ const Messages = () => {
                 <input type='text' onChange={(e) => setText(e.target.value)}
                     value={text} name="message" id="message-input" placeholder='Message' onKeyDown={(e)=>{
 
+                        setWait(messages.length % 2 !== 0)
                         if (e.key === 'Enter') 
                         {
                            send()
