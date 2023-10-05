@@ -26,7 +26,10 @@ const Sidebar = () => {
         <p>{profile.firstname}</p>
           <p>6:10 AM</p>
         </div>
-         <p> {messages.length >= 1 && <small>{messages[messages.length -1].text}</small>}</p>
+
+        {}
+         <p> {messages.length >= 1 && <small>{messages[messages.length -1].text.length > 20 ? messages[messages.length -1].text.substr(0 , 20) 
+                        + "...." : messages[messages.length -1].text}</small>}</p>
          </div>
 
         </li>

@@ -55,21 +55,21 @@ const Messages = () => {
                    
                    
                    {messages.map((message, index) => {
-                        return (<p key={index} className={`message__content ${message.type}`}>{message.text} 
+                        return (<div key={index} className={`message__content ${message.type}`}>{message.text} 
                         
                         <p className={`date ${message.type === 'message' ? 'text-white' : ''}`}>{moment(message.date).fromNow()}</p>
-                        </p>)
+                        </div>)
                     })}
                     
                    {wait &&  <p className={`message__content wait `}>
 
 
-                   <div class="is-typing">
-      <div class="jump1"></div>
-      <div class="jump2"></div>
-      <div class="jump3"></div>
-      <div class="jump4"></div>
-      <div class="jump5"></div>
+                   <div className="is-typing">
+      <div className="jump1"></div>
+      <div className="jump2"></div>
+      <div className="jump3"></div>
+      <div className="jump4"></div>
+      <div className="jump5"></div>
    </div>
                     </p>}
                     </>

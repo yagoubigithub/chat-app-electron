@@ -3,7 +3,7 @@
     box-sizing: border-box !important;
 }
 
-body , html {
+body , html ,p {
     margin: 0;
     padding: 0;
 }
